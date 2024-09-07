@@ -41,6 +41,17 @@
   color: slategray;
   overflow: hidden;
   z-index: 3;
+
+  transition-property: all;
+  transition-delay: 1s;
+  transition: height 1s, z-index 1s;
+  transition-behavior: allow-discrete;
+}
+
+#envelope-flap:checked ~ .card {
+  transition-delay: 2s;
+  z-index: 10;
+  height: fit-content;
 }
 
 .envelope-front {
@@ -131,5 +142,5 @@
 #envelope-flap:checked ~ .envelope-flap {
   transform: rotateX(160deg);
   transition-delay: 0s;
-  border-top: 8rem solid hsl(var(--envelope-color-hue), 100%, 85%);
+  border-top-color:  hsl(var(--envelope-color-hue), 100%, 85%);
 }

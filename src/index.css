@@ -22,4 +22,5 @@ body {
   height: 100vh;
   display: grid;
   background-color: antiquewhite;
+  overflow: hidden;
 }

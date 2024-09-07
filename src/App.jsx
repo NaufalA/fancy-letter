@@ -1,13 +1,13 @@
 import './App.css'
 import './styles/animation.css'
-import { Heart, Envelope } from './components'
+import { Whale, Envelope } from './components'
 
 function App() {
   return (
     <div className="container">
       <Envelope />
       {Array.from(Array(250).keys()).map((_, i) => (
-        <Heart
+        <Whale
           key={`heart-${i+1}`}
           className="drop-in"
           style={{

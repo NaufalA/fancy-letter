@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import './index.css';
 import { randomTransformStyles } from '../utils';
 
-export function Heart({
+export function Whale({
   className = '',
   style = {},
   sizeRange = { min: 4, max: 6 },
@@ -32,9 +32,9 @@ export function Heart({
 
   return (
     <img
-      src="src/assets/heart.svg"
+      src="src/assets/whale.svg"
       style={styleCombined}
-      className={`heart ${className}`}
+      className={`whale ${className}`}
     >
     </img>
   );

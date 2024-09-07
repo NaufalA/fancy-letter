@@ -11,7 +11,7 @@ export function Envelope() {
       />
       <label
         className="envelope-flap"
-        for="envelope-flap"
+        htmlFor="envelope-flap"
       />
       <div className="envelope-mid" />
       <div className="envelope-front" />

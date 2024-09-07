@@ -1,5 +1,3 @@
 .heart {
-  position: absolute;
-  fill: hotpink;
-  filter: invert(79%) sepia(19%) saturate(6261%) hue-rotate(284deg) brightness(100%) contrast(94%) drop-shadow(0 2px 5px black);
+  filter: brightness(0) saturate(100%) invert(74%) sepia(51%) saturate(375%) hue-rotate(306deg) brightness(107%) contrast(102%) var(--simple-drop-shadow);
 }

@@ -1,6 +1,6 @@
 .envelope-container {
   position: absolute;
-  margin-top: 2rem;
+  margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -8,7 +8,11 @@
   width: 25rem;
   max-width: 90%;
   height: 15rem;
-  box-shadow: 0px 0px 10px -1px rgb(0 0 0 / 30%);
+  box-shadow: 0px 0px 10px -1px rgb(0 0 0 / 50%);
+  
+  z-index: 1;
+
+  --envelope-color-hue: 219;
 }
 
 .envelope-back {
@@ -17,9 +21,9 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(230, 151, 164);
+  background-color: hsl(var(--envelope-color-hue), 100%, 76%);;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 .card {
@@ -36,7 +40,7 @@
   background-color: whitesmoke;
   color: slategray;
   overflow: hidden;
-  z-index: 2;
+  z-index: 3;
 }
 
 .envelope-front {
@@ -46,17 +50,64 @@
   bottom: 0;
   width: 100%;
   height: 70%;
-  background-color: rgb(248, 169, 183);
-  z-index: 3;
+  z-index: 5;
+  border-bottom: 7.5rem solid hsl(var(--envelope-color-hue), 100%, 83%);
+  border-left: 5rem solid transparent;
+  border-right: 5rem solid transparent;
+  box-sizing: border-box;
 
   transform-origin: bottom;
   transition-duration: 1s;
-  transition-delay: 0s;
+  transition-delay: 0.5s;
 }
 
 #envelope-flap:checked ~ .envelope-front {
   transform: rotateX(160deg);
   transition-delay: 0.5s;
+}
+
+.envelope-mid {
+  --envelope-mid-width: 5rem;
+}
+
+.envelope-mid::before, .envelope-mid::after {
+  content:"";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-top: 7.5rem solid transparent;
+  border-bottom: 7.5rem solid transparent;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 4;
+}
+
+.envelope-mid::before {
+  border-left: var(--envelope-mid-width) solid hsl(var(--envelope-color-hue), 100%, 80%);
+
+  transform-origin: left;
+  transition-duration: 1s;
+  transition-delay: 0s;
+}
+
+.envelope-mid::after {
+  border-right: var(--envelope-mid-width) solid hsl(var(--envelope-color-hue), 100%, 80%);
+
+  transform-origin: right;
+  transition-duration: 1s;
+  transition-delay: 0s;
+}
+
+#envelope-flap:checked ~ .envelope-mid::before {
+  transform: rotateY(160deg);
+  transition-delay: 1s;
+}
+
+#envelope-flap:checked ~ .envelope-mid::after {
+  transform: rotateY(160deg);
+  transition-delay: 1s;
 }
 
 .envelope-flap {
@@ -66,18 +117,19 @@
   top: 0;
   width: 100%;
   height: 40%;
-  border-top: 5rem solid pink;
-  border-left: 0.5rem solid transparent;
-  border-right: 1rem solid transparent;
+  border-top: 8rem solid hsl(var(--envelope-color-hue), 100%, 87%);
+  border-left: 5rem solid transparent;
+  border-right: 5rem solid transparent;
   box-sizing: border-box;
-  z-index: 4;
+  z-index: 6;
 
   transform-origin: top;
   transition-duration: 1s;
-  transition-delay: 0.5s;
+  transition-delay: 1s;
 }
 
 #envelope-flap:checked ~ .envelope-flap {
   transform: rotateX(160deg);
   transition-delay: 0s;
+  border-top: 8rem solid hsl(var(--envelope-color-hue), 100%, 85%);
 }

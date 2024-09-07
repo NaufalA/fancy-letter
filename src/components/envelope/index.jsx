@@ -13,6 +13,7 @@ export function Envelope() {
         className="envelope-flap"
         for="envelope-flap"
       />
+      <div className="envelope-mid" />
       <div className="envelope-front" />
       <div className="card">
         <p style={{ textAlign: 'center' }}>

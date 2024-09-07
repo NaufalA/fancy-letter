@@ -1,0 +1,38 @@
+@keyframes dropIn {
+  0% {
+    transform: translateY(-1000%) rotateX(0deg);
+  }
+
+  30% {
+    transform: translateY(-700%) rotateX(15deg);
+  }
+
+  100% {
+    transform: translate(initial) rotateX(270deg);
+  }
+}
+
+.drop-in {
+  animation-name: dropIn;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.beating {
+  animation-name: beating;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes beating {
+  0% {
+    scale: 1.1;
+  }
+
+  80% {
+    scale: 1;
+  }
+}

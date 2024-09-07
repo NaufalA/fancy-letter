@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './styles/animation.css'
+import { Heart } from './components'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="container">
+      {Array.from(Array(250).keys()).map((_, i) => (
+        <Heart
+          key={`heart-${i+1}`}
+          className="drop-in"
+          style={{
+            animationDuration: `${Math.random()*(5 - 2) + 2}s`,
+            animationFillMode: 'forward',
+            transform: `rotateX(50deg) rotateZ(${Math.random()*90}deg)`,
+          }}
+          sizeRange={{ min: 4, max: 6 }}
+          posXRange={{ min: -10, max: 100 }}
+          posYRange={{ min: 50, max: 100 }}
+        />
+      ))}
+    </div>
   )
 }
 

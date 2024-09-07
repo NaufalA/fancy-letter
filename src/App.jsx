@@ -1,10 +1,11 @@
 import './App.css'
 import './styles/animation.css'
-import { Heart } from './components'
+import { Heart, Envelope } from './components'
 
 function App() {
   return (
     <div className="container">
+      <Envelope />
       {Array.from(Array(250).keys()).map((_, i) => (
         <Heart
           key={`heart-${i+1}`}

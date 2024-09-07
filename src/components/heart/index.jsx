@@ -23,7 +23,6 @@ export function Heart({
         height: `${size}rem`,
         ...style,
       };
-      console.log(combinedStyle);
       return combinedStyle;
     },
     [],

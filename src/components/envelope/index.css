@@ -1,0 +1,83 @@
+.envelope-container {
+  position: absolute;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 25rem;
+  max-width: 90%;
+  height: 15rem;
+  box-shadow: 0px 0px 10px -1px rgb(0 0 0 / 30%);
+}
+
+.envelope-back {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(230, 151, 164);
+
+  z-index: 1;
+}
+
+.card {
+  position: absolute;
+  width: 92%;
+  height: 90%;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 2%;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  color: slategray;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.envelope-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  background-color: rgb(248, 169, 183);
+  z-index: 3;
+
+  transform-origin: bottom;
+  transition-duration: 1s;
+  transition-delay: 0s;
+}
+
+#envelope-flap:checked ~ .envelope-front {
+  transform: rotateX(160deg);
+  transition-delay: 0.5s;
+}
+
+.envelope-flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 40%;
+  border-top: 5rem solid pink;
+  border-left: 0.5rem solid transparent;
+  border-right: 1rem solid transparent;
+  box-sizing: border-box;
+  z-index: 4;
+
+  transform-origin: top;
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+}
+
+#envelope-flap:checked ~ .envelope-flap {
+  transform: rotateX(160deg);
+  transition-delay: 0s;
+}

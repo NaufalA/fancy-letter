@@ -22,7 +22,7 @@ function App() {
           Aku sayang Ody selamanya.
         </p>
       </Envelope>
-      {Array.from(Array(250).keys()).map((_, i) => (
+      {Array.from(Array(100).keys()).map((_, i) => (
         <Heart
           key={`heart-${i+1}`}
           className="drop-in"
@@ -31,12 +31,12 @@ function App() {
             animationFillMode: 'forward',
             transform: `rotateX(50deg) rotateZ(${Math.random()*90}deg)`,
           }}
-          sizeRange={{ min: 4, max: 6 }}
+          sizeRange={{ min: 6, max: 10 }}
           posXRange={{ min: -10, max: 100 }}
           posYRange={{ min: 50, max: 100 }}
         />
       ))}
-      {Array.from(Array(250).keys()).map((_, i) => (
+      {Array.from(Array(100).keys()).map((_, i) => (
         <Whale
           key={`heart-${i+1}`}
           className="drop-in"
@@ -45,7 +45,7 @@ function App() {
             animationFillMode: 'forward',
             transform: `rotateX(50deg) rotateZ(${Math.random()*90}deg)`,
           }}
-          sizeRange={{ min: 4, max: 6 }}
+          sizeRange={{ min: 6, max: 10 }}
           posXRange={{ min: -10, max: 100 }}
           posYRange={{ min: 50, max: 100 }}
         />

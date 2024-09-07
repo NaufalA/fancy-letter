@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import './index.css';
 import { randomTransformStyles } from '../utils';
+import whaleSVG from '../../assets/whale.svg';
 
 export function Whale({
   className = '',
@@ -32,7 +33,7 @@ export function Whale({
 
   return (
     <img
-      src="src/assets/whale.svg"
+      src={whaleSVG}
       style={styleCombined}
       className={`whale ${className}`}
     >

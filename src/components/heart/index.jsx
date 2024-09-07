@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import './index.css';
 import { randomTransformStyles } from '../utils';
+import heartSVG from '../../assets/heart.svg';
 
 export function Heart({
   className = '',
@@ -32,7 +33,7 @@ export function Heart({
 
   return (
     <img
-      src="src/assets/heart.svg"
+      src={heartSVG}
       style={styleCombined}
       className={`heart ${className}`}
     >

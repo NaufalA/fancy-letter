@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import './index.css';
 
 export function Envelope({
+  className = '',
   style= {
   width: '25rem',
   maxWidth: '90%',
@@ -13,12 +14,15 @@ export function Envelope({
   children,
 }) {
   return (
-    <div className="envelope-container" style={{
-    width: style.width,
-    maxWidth: style.maxWidth,
-    height: style.height,
-    marginTop: style.marginTop,
-    }}>
+    <div
+      className={`envelope-container ${className}`}
+      style={{
+        width: style.width,
+        maxWidth: style.maxWidth,
+        height: style.height,
+        marginTop: style.marginTop,
+      }}
+    >
       <div className="envelope-back" />
       <input
         id="envelope-flap"

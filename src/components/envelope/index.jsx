@@ -1,9 +1,9 @@
-import { useRef } from 'react';
+/* eslint-disable react/prop-types */
 import './index.css';
 
 export function Envelope({
   className = '',
-  style= {
+  style={
   width: '25rem',
   maxWidth: '90%',
   height: '15rem',
@@ -11,6 +11,7 @@ export function Envelope({
   envelopeFlapHeight: '8rem',
   envelopeFrontHeight: '8rem',
   },
+  flapElement,
   children,
 }) {
   return (
@@ -28,6 +29,18 @@ export function Envelope({
         id="envelope-flap"
         type="checkbox"
       />
+      {flapElement && (
+      <div style={{
+        height: '80%',
+        position:'relative',
+        zIndex: 10,
+        display: 'flex',
+        alignItems: 'end',
+        justifyContent: 'center',
+      }}>
+        {flapElement}
+      </div>
+      )}
       <label
         className="envelope-flap"
         htmlFor="envelope-flap"

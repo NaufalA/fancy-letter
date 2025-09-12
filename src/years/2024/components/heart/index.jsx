@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import './index.css';
-import { randomTransformStyles } from '../utils';
+import { randomTransformStyles } from '../../../../components/utils';
 import heartSVG from '../../assets/heart.svg';
 
 export function Heart({

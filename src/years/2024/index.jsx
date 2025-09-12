@@ -1,7 +1,9 @@
 import { Envelope } from '../../components';
+import { useIconChanger } from '../../hooks';
 import { Whale, Heart } from './components';
 
 export default function Year2024() {
+  useIconChanger({ iconPath: '/whale.svg' });
   return (
     <>
       <Envelope

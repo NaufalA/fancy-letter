@@ -1,7 +1,11 @@
-import { useMemo } from 'react';
+import { useMemo, lazy, Suspense } from 'react';
 import './App.css'
 import './styles/animation.css'
-import { Year2024 } from './years'
+
+  const years = {
+    '2024': lazy(() => import('./years/2024')),
+    '2025': lazy(() => import('./years/2025')),
+  };
 
 function App() {
   const params = useMemo(() => {
@@ -10,18 +14,17 @@ function App() {
   }, []);
 
   const year = useMemo(() => {
-    if (!params.get('year')) {
+    const paramsYear = params.get('year');
+    if (!paramsYear) {
       const thisYear = new Date().getFullYear();
       params.set('year', thisYear);
       window.location.search = params.toString();
       
       return thisYear;
     }
-  }, [params]);
 
-  const years = useMemo(() => ({
-    '2024': Year2024,
-  }), [])
+    return paramsYear
+  }, [params]);
 
   const HappyBirtday = useMemo(() => {
     let Element = years[year];
@@ -30,11 +33,13 @@ function App() {
       Element = yearsEntries[yearsEntries.length - 1][1];
     }
     return Element;
-  }, [year, years]);
+  }, [year]);
 
   return (
     <div className="container">
-      <HappyBirtday />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HappyBirtday />
+      </Suspense>
     </div>
   )
 }

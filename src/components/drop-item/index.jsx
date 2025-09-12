@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import './index.css';
-import { randomTransformStyles } from '../../../../components/utils';
-import whaleSVG from '../../assets/whale.svg';
+import { randomTransformStyles } from '../utils';
 
-export function Whale({
+export function DropItem({
   className = '',
+  imgSrc='',
   style = {},
   sizeRange = { min: 4, max: 6 },
   posXRange = { min: 10, max: 80 },
@@ -33,9 +33,9 @@ export function Whale({
 
   return (
     <img
-      src={whaleSVG}
+      src={imgSrc}
       style={styleCombined}
-      className={`whale ${className}`}
+      className={`${className}`}
     >
     </img>
   );

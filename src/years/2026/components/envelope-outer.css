@@ -1,0 +1,46 @@
+.envelope-container {
+  --envelope-color-hue: 21;
+  --envelope-color-sat: 50%;
+}
+
+.envelope-back {
+  background-color: hsl(var(--envelope-color-hue), var(--envelope-color-sat), 76%);;
+}
+
+.card {
+  background-color: whitesmoke;
+  color: slategray;
+}
+
+.envelope-front {
+  border-bottom: 7.5rem solid hsl(var(--envelope-color-hue), var(--envelope-color-sat), 83%);
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid transparent;
+}
+
+.envelope-mid {
+  --envelope-mid-width: 3rem;
+}
+
+.envelope-mid::before, .envelope-mid::after {
+  border-top: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+
+.envelope-mid::before {
+  border-left: var(--envelope-mid-width) solid hsl(var(--envelope-color-hue), var(--envelope-color-sat), 80%);
+}
+
+.envelope-mid::after {
+  border-right: var(--envelope-mid-width) solid hsl(var(--envelope-color-hue), var(--envelope-color-sat), 80%);
+}
+
+.envelope-flap {
+  border-top: 8rem solid hsl(var(--envelope-color-hue), var(--envelope-color-sat), 87%);
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid transparent;
+}
+
+#envelope-flap:checked ~ .envelope-flap {
+  border-top-color:  hsl(var(--envelope-color-hue), var(--envelope-color-sat), 85%);
+}

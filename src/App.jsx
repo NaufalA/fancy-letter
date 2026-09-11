@@ -5,6 +5,7 @@ import './styles/animation.css'
   const years = {
     '2024': lazy(() => import('./years/2024')),
     '2025': lazy(() => import('./years/2025')),
+    '2026': lazy(() => import('./years/2026')),
   };
 
 function App() {
